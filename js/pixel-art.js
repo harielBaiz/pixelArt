@@ -1,9 +1,11 @@
 // variables globales:
 var paleta = document.getElementById("paleta");
 var grillaPx = document.getElementById("grilla-pixeles");
+var botonGuardar = document.getElementById("guardar");
 
 //Estado del mouse sobre la grilla
 var mouseEstado = false;
+
 
 var nombreColores = ['White', 'LightYellow',
   'LemonChiffon', 'LightGoldenrodYellow', 'PapayaWhip', 'Moccasin', 'PeachPuff', 'PaleGoldenrod', 'Bisque', 'NavajoWhite', 'Wheat', 'BurlyWood', 'Tan',
@@ -39,7 +41,7 @@ generarPaleta();
 
 // genera grilla para pintar
 var generarGrillaPx = function(){
-  for (var i=0; i<=1750; i++){
+  for (var i=0; i<1749; i++){
     var nuevoDiv = document.createElement("div");
     grillaPx.appendChild(nuevoDiv);
   }
@@ -52,6 +54,9 @@ paleta.addEventListener("mousedown", cambiarColor);
 function cambiarColor(e){
   colorPincel.style.backgroundColor = e.target.style.backgroundColor;
 }
+
+//el pincel comienza con el color negro
+colorPincel.style.backgroundColor="black";
 
 // Variable para guardar el elemento 'color-personalizado'
 // Es decir, el que se elige con la rueda de color.
@@ -89,3 +94,37 @@ function seguirPintando(e){
     e.target.style.backgroundColor=colorPincel.style.backgroundColor;
   }
 }
+
+//boton Guardar
+botonGuardar.addEventListener("mousedown", guardarPixelArt);
+
+//boton Borrar
+$("#borrar").click(function(){
+  var $borrarGrilla = $("#grilla-pixeles");
+  $borrarGrilla.find("div").animate({"background-color":"#fff"},1500);
+});
+
+//boton pintarTodo
+$("#pintarTodo").click(function(){
+  var $colorActual = $("#indicador-de-color").css("background-color");
+  var $pintarGrilla = $("#grilla-pixeles");
+  $pintarGrilla.find("div").css("background-color",$colorActual);
+});
+
+//carga superhéroes
+$("#batman").click(function(){
+  cargarSuperheroe(batman);
+});
+
+
+$("#wonder").click(function(){
+  cargarSuperheroe(wonder);
+});
+
+$("#flash").click(function(){
+  cargarSuperheroe(flash);
+});
+
+$("#invisible").click(function(){
+  cargarSuperheroe(invisible);
+});

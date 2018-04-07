@@ -49,8 +49,8 @@ ul {
 }
 p {
   text-transform: uppercase;
-  font-size: .3em;
-  text-align: right;
+  font-size: .4em;
+  text-align: left;
 }
 h1 {
   color: white;
@@ -64,6 +64,8 @@ h3 {
   margin-bottom: 15px;
   margin-top: 10px;
   font-family: 'Press Start 2P';
+  padding-top: 10px;
+  border-top: 2px solid white;
 }
 
 input[type="color"] {
@@ -73,6 +75,7 @@ input[type="color"] {
   height: 30px;
   width: 30px;
   cursor: pointer;
+  margin-right: 10px;
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
 	padding: 0;
@@ -137,14 +140,17 @@ img {
   height: auto;
 }
  .input-color li {
+   background-color: rgb(25, 25, 25);
+   padding: 5px;
    margin: 10px 0;
-   justify-content: space-between;
+   justify-content: flex-start;
  }
 #indicador-de-color {
   height: 30px;
   width: 30px;
   border: 1px solid white;
   margin: 0;
+  margin-right:10px;
   position: relative;
 
 }
