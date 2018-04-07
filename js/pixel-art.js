@@ -28,6 +28,7 @@ var nombreColores = ['White', 'LightYellow',
   'MediumPurple', 'Lavender', 'Gainsboro', 'LightGray', 'Silver', 'DarkGray', 'Gray',
   'DimGray', 'LightSlateGray', 'DarkSlateGray', 'Black'
 ];
+
 // genera paleta de colores
 var generarPaleta = function(){
   for (var i=0; i<nombreColores.length; i++){
@@ -61,7 +62,6 @@ colorPincel.style.backgroundColor="black";
 // Variable para guardar el elemento 'color-personalizado'
 // Es decir, el que se elige con la rueda de color.
 var colorPersonalizado = document.getElementById('color-personalizado');
-
 colorPersonalizado.addEventListener('change',
   (function() {
     // Se guarda el color de la rueda en colorActual
@@ -73,7 +73,6 @@ colorPersonalizado.addEventListener('change',
 
 //Pintar grilla
 grillaPx.addEventListener("mousedown", pintar);
-
 function pintar(e) {
   mouseEstado = true;
   e.target.style.backgroundColor=colorPincel.style.backgroundColor;
@@ -81,14 +80,12 @@ function pintar(e) {
 
 //detecta mouseup
 grillaPx.addEventListener("mouseup", mouseParado);
-
 function mouseParado(){
   mouseEstado = false;
 }
 
 //sigue pintando
 grillaPx.addEventListener("mouseover", seguirPintando);
-
 function seguirPintando(e){
   if(mouseEstado){
     e.target.style.backgroundColor=colorPincel.style.backgroundColor;
@@ -115,7 +112,6 @@ $("#pintarTodo").click(function(){
 $("#batman").click(function(){
   cargarSuperheroe(batman);
 });
-
 
 $("#wonder").click(function(){
   cargarSuperheroe(wonder);
